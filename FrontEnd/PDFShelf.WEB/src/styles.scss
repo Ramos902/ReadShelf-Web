@@ -11,69 +11,79 @@
 
     --radius: 0.625rem;
 
-    /* Modo Claro */
-    --background: #FAFAF5;
-    --foreground: #2D3A30;
+    /* Modo Claro - Baseado na nova paleta */
+    --background: #f4fcf6; /* Variação claríssima do Tea Green */
+    --foreground: #22577A; /* Baltic Blue */
     --card: #FFFFFF;
-    --card-foreground: #2D3A30;
+    --card-foreground: #22577A;
     --popover: #FFFFFF;
-    --popover-foreground: #2D3A30;
-    --primary: #557C55;
+    --popover-foreground: #22577A;
+    
+    --primary: #38A3A5; /* Tropical Teal */
     --primary-foreground: #FFFFFF;
-    --secondary: #F0F0EB;
-    --secondary-foreground: #2D3A30;
-    --muted: #F0F0EB;
-    --muted-foreground: #5C6B5D;
-    --accent: #A6CF98;
-    --accent-foreground: #2D3A30;
-    --destructive: #C0392B;
-    --border: rgba(85, 124, 85, 0.2);
-    --input: rgba(85, 124, 85, 0.2);
-    --ring: #557C55;
+    
+    --secondary: #C7F9CC; /* Tea Green */
+    --secondary-foreground: #22577A;
+    
+    --muted: #F0F7F1;
+    --muted-foreground: #57CC99; /* Emerald */
+    
+    --accent: #80ED99; /* Light Green */
+    --accent-foreground: #22577A;
+    
+    --destructive: #E63946; 
+    --border: rgba(56, 163, 165, 0.2); /* Tropical Teal com opacidade */
+    --input: rgba(56, 163, 165, 0.2);
+    --ring: #38A3A5;
 
-    /* Sidebar (se você usa) */
-    --sidebar: #F0F0EB;
-    --sidebar-foreground: #2D3A30;
-    --sidebar-primary: #557C55;
+    /* Sidebar */
+    --sidebar: #C7F9CC;
+    --sidebar-foreground: #22577A;
+    --sidebar-primary: #38A3A5;
     --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #A6CF98;
-    --sidebar-accent-foreground: #2D3A30;
-    --sidebar-border: rgba(85, 124, 85, 0.2);
-    --sidebar-ring: #557C55;
+    --sidebar-accent: #80ED99;
+    --sidebar-accent-foreground: #22577A;
+    --sidebar-border: rgba(34, 87, 122, 0.1);
+    --sidebar-ring: #38A3A5;
 }
 
 :root.dark {
     color-scheme: dark;
 
-    /* Modo Escuro */
-    --background: #1E241E;
-    --foreground: #E0E8D8;
-    --card: #252C25;
-    --card-foreground: #E0E8D8;
-    --popover: #252C25;
-    --popover-foreground: #E0E8D8;
-    --primary: #6B8E6B;
-    --primary-foreground: #1E241E;
-    --secondary: #252C25;
-    --secondary-foreground: #E0E8D8;
-    --muted: #252C25;
-    --muted-foreground: #A8B8A0;
-    --accent: #B8E0A8;
-    --accent-foreground: #1E241E;
-    --destructive: #E74C3C;
-    --border: rgba(107, 142, 107, 0.3);
-    --input: rgba(107, 142, 107, 0.3);
-    --ring: #6B8E6B;
+    /* Modo Escuro - Foco em Baltic Blue profundo */
+    --background: #122d40; /* Baltic Blue escurecido */
+    --foreground: #C7F9CC; /* Tea Green */
+    --card: #1a3f58;
+    --card-foreground: #C7F9CC;
+    --popover: #1a3f58;
+    --popover-foreground: #C7F9CC;
+    
+    --primary: #57CC99; /* Emerald para brilhar no escuro */
+    --primary-foreground: #122d40;
+    
+    --secondary: #22577A; /* Baltic Blue */
+    --secondary-foreground: #C7F9CC;
+    
+    --muted: #1a3f58;
+    --muted-foreground: #80ED99;
+    
+    --accent: #38A3A5; /* Tropical Teal */
+    --accent-foreground: #FFFFFF;
+    
+    --destructive: #FF4D4D;
+    --border: rgba(87, 204, 153, 0.2);
+    --input: rgba(87, 204, 153, 0.2);
+    --ring: #57CC99;
 
     /* Sidebar no modo escuro */
-    --sidebar: #252C25;
-    --sidebar-foreground: #E0E8D8;
-    --sidebar-primary: #6B8E6B;
-    --sidebar-primary-foreground: #1E241E;
-    --sidebar-accent: #B8E0A8;
-    --sidebar-accent-foreground: #1E241E;
-    --sidebar-border: rgba(107, 142, 107, 0.3);
-    --sidebar-ring: #6B8E6B;
+    --sidebar: #16354a;
+    --sidebar-foreground: #C7F9CC;
+    --sidebar-primary: #57CC99;
+    --sidebar-primary-foreground: #122d40;
+    --sidebar-accent: #38A3A5;
+    --sidebar-accent-foreground: #FFFFFF;
+    --sidebar-border: rgba(87, 204, 153, 0.1);
+    --sidebar-ring: #57CC99;
 }
 
 html, body {
