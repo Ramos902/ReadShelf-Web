@@ -5,7 +5,7 @@
     </a>
     <div class="flex items-center gap-4">
       <ng-container *ngIf="!isAuthenticated()">
-        <a routerLink="/auth/login" hlmBtn variant="default" size="sm">
+        <a routerLink="/auth/login" class="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium bg-primary text-primary-foreground hover:opacity-90">
           Login
         </a>
       </ng-container>
@@ -14,10 +14,10 @@
         <span class="text-sm text-muted-foreground">
           Olá, <strong>{{ currentUser()?.name }}</strong>
         </span>
-        <a routerLink="/shelf" hlmBtn variant="ghost" size="sm">
+        <a routerLink="/shelf" class="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium hover:bg-muted">
           Minha Estante
         </a>
-        <button hlmBtn variant="destructive" size="sm" (click)="logout()">
+        <button type="button" class="inline-flex items-center rounded-md px-3 py-1.5 text-sm font-medium bg-destructive text-white hover:opacity-90" (click)="logout()">
           Sair
         </button>
       </ng-container>

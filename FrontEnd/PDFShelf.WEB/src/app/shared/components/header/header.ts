@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../core/services/auth/auth';
-import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { ThemeService } from '../../../core/services/theme/theme';
 
 @Component({

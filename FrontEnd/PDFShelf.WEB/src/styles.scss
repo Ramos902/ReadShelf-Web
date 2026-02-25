@@ -2,91 +2,89 @@
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/preflight.css' layer(base);
 @import 'tailwindcss/utilities.css';
-@import "@spartan-ng/brain/hlm-tailwind-preset.css";
 
+/* Opção A: Neutros + acento azul (enterprise / leitura) */
 :root {
-    color-scheme: light;
+  color-scheme: light;
 
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --radius: 0.625rem;
 
-    --radius: 0.625rem;
+  /* Modo claro – fundos neutros, texto cinza escuro */
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
 
-    /* Modo Claro - Baseado na nova paleta */
-    --background: #f4fcf6; /* Variação claríssima do Tea Green */
-    --foreground: #22577A; /* Baltic Blue */
-    --card: #FFFFFF;
-    --card-foreground: #22577A;
-    --popover: #FFFFFF;
-    --popover-foreground: #22577A;
-    
-    --primary: #38A3A5; /* Tropical Teal */
-    --primary-foreground: #FFFFFF;
-    
-    --secondary: #C7F9CC; /* Tea Green */
-    --secondary-foreground: #22577A;
-    
-    --muted: #F0F7F1;
-    --muted-foreground: #57CC99; /* Emerald */
-    
-    --accent: #80ED99; /* Light Green */
-    --accent-foreground: #22577A;
-    
-    --destructive: #E63946; 
-    --border: rgba(56, 163, 165, 0.2); /* Tropical Teal com opacidade */
-    --input: rgba(56, 163, 165, 0.2);
-    --ring: #38A3A5;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
 
-    /* Sidebar */
-    --sidebar: #C7F9CC;
-    --sidebar-foreground: #22577A;
-    --sidebar-primary: #38A3A5;
-    --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #80ED99;
-    --sidebar-accent-foreground: #22577A;
-    --sidebar-border: rgba(34, 87, 122, 0.1);
-    --sidebar-ring: #38A3A5;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #1e293b;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --accent: #e2e8f0;
+  --accent-foreground: #1e293b;
+
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2563eb;
+
+  --sidebar: #f1f5f9;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2e8f0;
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #2563eb;
 }
 
 :root.dark {
-    color-scheme: dark;
+  color-scheme: dark;
 
-    /* Modo Escuro - Foco em Baltic Blue profundo */
-    --background: #122d40; /* Baltic Blue escurecido */
-    --foreground: #C7F9CC; /* Tea Green */
-    --card: #1a3f58;
-    --card-foreground: #C7F9CC;
-    --popover: #1a3f58;
-    --popover-foreground: #C7F9CC;
-    
-    --primary: #57CC99; /* Emerald para brilhar no escuro */
-    --primary-foreground: #122d40;
-    
-    --secondary: #22577A; /* Baltic Blue */
-    --secondary-foreground: #C7F9CC;
-    
-    --muted: #1a3f58;
-    --muted-foreground: #80ED99;
-    
-    --accent: #38A3A5; /* Tropical Teal */
-    --accent-foreground: #FFFFFF;
-    
-    --destructive: #FF4D4D;
-    --border: rgba(87, 204, 153, 0.2);
-    --input: rgba(87, 204, 153, 0.2);
-    --ring: #57CC99;
+  /* Modo escuro – fundo slate, texto claro */
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #1e293b;
+  --card-foreground: #e2e8f0;
+  --popover: #1e293b;
+  --popover-foreground: #e2e8f0;
 
-    /* Sidebar no modo escuro */
-    --sidebar: #16354a;
-    --sidebar-foreground: #C7F9CC;
-    --sidebar-primary: #57CC99;
-    --sidebar-primary-foreground: #122d40;
-    --sidebar-accent: #38A3A5;
-    --sidebar-accent-foreground: #FFFFFF;
-    --sidebar-border: rgba(87, 204, 153, 0.1);
-    --sidebar-ring: #57CC99;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --accent: #334155;
+  --accent-foreground: #e2e8f0;
+
+  --destructive: #ef4444;
+  --border: #334155;
+  --input: #334155;
+  --ring: #3b82f6;
+
+  --sidebar: #1e293b;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #334155;
+  --sidebar-ring: #3b82f6;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -101,15 +99,32 @@ body {
 *,
 *::before,
 *::after {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
+  * {
+    border-color: var(--border);
+    outline: 2px solid color-mix(in srgb, var(--ring) 50%, transparent);
+    outline-offset: 2px;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-    }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@layer components {
+  .bg-primary { background-color: var(--primary); }
+  .text-primary { color: var(--primary); }
+  .text-primary-foreground { color: var(--primary-foreground); }
+  .bg-destructive { background-color: var(--destructive); }
+  .hover\:bg-muted:hover { background-color: var(--muted); }
+  .bg-background { background-color: var(--background); }
+  .text-foreground { color: var(--foreground); }
+  .border-border { border-color: var(--border); }
+  .bg-card { background-color: var(--card); }
+  .text-card-foreground { color: var(--card-foreground); }
+  .focus\:ring-ring:focus { --tw-ring-color: var(--ring); }
 }

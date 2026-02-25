@@ -7,9 +7,8 @@ export const loginGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-    // Verifica se o usuário NÃO está autenticado
-  if (!authService.getToken()) {
-    return true; // Permite o acesso (mostra a tela de login)
+  if (!authService.isAuthenticated()) {
+    return true;
   }
 
   // Se JÁ ESTIVER logado, redireciona para a prateleira (/shelf)

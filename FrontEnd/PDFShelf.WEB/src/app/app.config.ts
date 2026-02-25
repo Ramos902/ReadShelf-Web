@@ -1,9 +1,8 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { authInterceptor } from './core/Interceptors/interceptor';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
 
-// ↓↓↓↓ GARANTA QUE ESTA LINHA ESTEJA AQUI ↓↓↓↓
 import { provideHttpClient, withInterceptors } from '@angular/common/http'; 
 
 export const appConfig: ApplicationConfig = {

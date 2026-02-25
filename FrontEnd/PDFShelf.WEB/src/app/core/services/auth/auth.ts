@@ -4,25 +4,16 @@ import { Observable, tap } from 'rxjs';
 import { AuthResponse } from '../../models/auth-response.model';
 import { User } from '../../models/user-model';
 import { UserLoginDto, UserRegisterDto } from '../../models/user-model';
-import { environment } from '../../../../environments/environment'; // 1. Importe
+import { environment } from '../../../../environments/environment';
 
-// Chave para salvar o token no localStorage
 const TOKEN_KEY = 'pdfshelf_token';
 const USER_KEY = 'pdfshelf_user';
 
-// ↓↓↓↓↓ ESTA É A CORREÇÃO PRINCIPAL ↓↓↓↓↓
-//
-// Ao adicionar 'providedIn: 'root'', este serviço
-// se torna um "singleton" e ganha acesso
-// aos providers do app.config.ts (como o provideHttpClient())
 @Injectable({
-  providedIn: 'root' 
+  providedIn: 'root'
 })
 export class AuthService {
-  
-  // URL da API de usuários
-  //private apiUrl = '${enviroment.apiUrl}/users';
-  private apiUrl = environment.apiUrl + "/users";
+  private apiUrl = `${environment.apiUrl}/users`;
 
   // State Signals (Estado reativo)
   public currentUser = signal<User | null>(this.getUserFromStorage());

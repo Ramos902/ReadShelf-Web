@@ -1,6 +1,8 @@
 .main-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   padding: 10px 40px;
   position: sticky;
   top: 0;
@@ -16,7 +18,7 @@
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: var(--foreground);
   text-decoration: none;
 }
 
@@ -27,41 +29,40 @@
 }
 
 .nav-link {
-  color: #555;
+  color: var(--muted-foreground);
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
   background: none;
   border: none;
   padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .nav-link:hover {
-  color: #007bff;
+  color: var(--primary);
 }
 
 .navbar-text {
-  color: #6c757d;
+  color: var(--muted-foreground);
   margin-right: 10px;
 }
 
 .btn-primary {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
+
 .btn-primary:hover {
-  background-color: #0056b3;
-  color: white;
+  opacity: 0.9;
 }
 
 .btn-danger {
-    background-color: #dc3545;
-    color: white;
+  background-color: var(--destructive);
+  color: white;
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
-    color: white;
+  opacity: 0.9;
 }

@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PdfService } from '../../../../core/services/auth/pdf-service';
+import { PdfService } from '../../../../core/services/pdf/pdf.service';
 import { PdfSummary } from '../../../../core/models/pdfs-model';
 import { FormsModule } from '@angular/forms'; // Para o input de título se quiser
 

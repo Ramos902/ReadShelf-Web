@@ -1,6 +1,6 @@
 <main class="flex h-full items-center justify-center px-4 font-sans">
 
-  <div class="w-full max-w-[400px] rounded-lg p-10 shadow-md">
+  <div class="w-full max-w-[400px] rounded-lg border border-border bg-card p-10 text-card-foreground shadow-md">
     <h1 class="mb-2 text-center text-3xl">ReadShelf</h1>
     <p class="mb-8 text-center text-base">Acesse sua prateleira de PDFs</p>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="flex flex-col gap-4">
@@ -32,14 +32,14 @@
       }
 
       <button type="submit" [disabled]="loginForm.invalid"
-        class="mt-4 w-full cursor-pointer rounded-md p-3.5 text-base font-semibold transition active:scale-95 disabled:cursor-not-allowed">
+        class="mt-4 w-full cursor-pointer rounded-md bg-primary p-3.5 text-base font-semibold text-primary-foreground transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-60">
         Entrar
       </button>
     </form>
 
     <div class="mt-6 text-center text-sm">
       <p>Não tem uma conta?
-        <a routerLink="/auth/register" class="cursor-pointer font-semibold hover:underline">
+        <a routerLink="/auth/register" class="cursor-pointer font-semibold text-primary hover:underline">
           Registre-se
         </a>
       </p>
