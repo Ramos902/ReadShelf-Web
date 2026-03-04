@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PdfSummary, PdfDetail } from '../../models/pdfs-model';
+import { PdfSummary, PdfDetail, Annotation, CreateAnnotationDto, UpdateAnnotationDto } from '../../models/pdfs-model';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -10,6 +10,8 @@ import { environment } from '../../../../environments/environment';
 export class PdfService {
   private http = inject(HttpClient);
   private apiUrl = `${environment.apiUrl}/pdfs`;
+
+  // ── PDFs ──────────────────────────────────────────
 
   getMyPdfs(): Observable<PdfSummary[]> {
     return this.http.get<PdfSummary[]>(this.apiUrl);
@@ -38,5 +40,23 @@ export class PdfService {
 
   renamePdf(id: string, title: string): Observable<void> {
     return this.http.put<void>(`${this.apiUrl}/${id}`, { title });
+  }
+
+  // ── ANOTAÇÕES ─────────────────────────────────────
+
+  getAnnotations(pdfId: string): Observable<Annotation[]> {
+    return this.http.get<Annotation[]>(`${this.apiUrl}/${pdfId}/annotations`);
+  }
+
+  createAnnotation(pdfId: string, dto: CreateAnnotationDto): Observable<Annotation> {
+    return this.http.post<Annotation>(`${this.apiUrl}/${pdfId}/annotations`, dto);
+  }
+
+  updateAnnotation(pdfId: string, annotationId: string, dto: UpdateAnnotationDto): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${pdfId}/annotations/${annotationId}`, dto);
+  }
+
+  deleteAnnotation(pdfId: string, annotationId: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${pdfId}/annotations/${annotationId}`);
   }
 }
