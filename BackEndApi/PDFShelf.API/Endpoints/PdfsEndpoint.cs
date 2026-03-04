@@ -256,8 +256,48 @@ namespace PDFShelf.Api.Endpoints
             .Accepts<PdfUploadRequest>("multipart/form-data")
             .DisableAntiforgery(); // Necessário para testes com Swagger/Postman
 
+            group.MapGet("/{id:guid}/download", async (
+                Guid id,
+                AppDbContext db,
+                ClaimsPrincipal user,
+                IWebHostEnvironment env) =>
+            {
+                if (!TryGetUserId(user, out Guid userId))
+                    return Results.Unauthorized();
 
+                // Busca o PDF no banco
+                var pdf = await db.Pdfs
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
+
+                if (pdf == null)
+                    return Results.NotFound();
+
+                // Segurança: só o dono pode baixar
+                if (pdf.UserId != userId)
+                    return Results.Forbid();
+
+                // Monta o caminho físico do arquivo
+                var uploadsDir = Path.Combine(env.WebRootPath ?? "wwwroot", "uploads");
+                var fullPath = Path.Combine(uploadsDir, pdf.FilePath);
+
+                if (!File.Exists(fullPath))
+                    return Results.NotFound("Arquivo não encontrado no servidor.");
+
+                // Retorna o arquivo como stream (inline = abre no browser, não força download)
+                var stream = new FileStream(fullPath, FileMode.Open, FileAccess.Read);
+                return Results.File(
+                    fileStream: stream,
+                    contentType: "application/pdf",
+                    fileDownloadName: pdf.OriginalFileName,
+                    enableRangeProcessing: true // Permite navegação por páginas no iframe
+                );
+            })
+            .WithSummary("Faz o download/stream de um PDF")
+            .WithDescription("Retorna o arquivo PDF como stream. Usado pelo visualizador no frontend.");
         }
+
+
 
         /// <summary>
         /// Função helper privada para extrair o Guid do UserId do token (ClaimsPrincipal)

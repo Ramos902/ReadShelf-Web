@@ -4,5 +4,15 @@ export interface PdfSummary {
   thumbnailUrl: string;
   pageCount: number;
   fileSizeMB: number;
-  uploadedAt: string; // Datas vêm como string do JSON
+  uploadedAt: string;
+}
+
+export interface PdfDetail {
+  id: string;
+  title: string;
+  originalFileName: string;
+  pageCount: number;
+  fileSizeMB: number;
+  uploadedAt: string;
+  lastModifiedAt: string;
 }
