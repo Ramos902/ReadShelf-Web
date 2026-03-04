@@ -98,6 +98,7 @@ var app = builder.Build();
 app.MapTestDbEdnpoints();
 app.MapUserEndpoints();
 app.MapPdfEndpoints();
+app.MapAnnotationEndpoints();
 
 //Using CORS
 app.UseCors("AllowAngularApp"); 
