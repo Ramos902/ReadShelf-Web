@@ -1,5 +1,13 @@
+main{
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .shelf-container {
-  padding: 1rem;
+  padding: 30px;
+  width: 70%;
 }
 
 .shelf-header {
